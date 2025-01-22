@@ -1,0 +1,290 @@
+/* место для вашего кода */
+
+ul {
+    list-style: none;
+}
+.header {
+    margin-top: 20px;
+    padding: 0 25px 0 51px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 0.4fr 1fr 0.3fr 1fr 184px 1fr;
+    grid-template-areas:
+        "main-text header__links header__links logo . address";
+    height: 105px;
+    font-size: 18px;
+}
+
+
+.header__main-text {
+    grid-area: main-text;
+    font-weight: 400;
+    font-family: Raleway;
+}
+
+.header__links-ul {
+    display: flex;
+    list-style: circle;
+    text-decoration: underline;
+    gap: 32px;
+}
+
+.header__links {
+    grid-area: header__links;
+}
+
+.header__logo {
+    grid-area: logo;
+    height: 105px;
+    /* Иногда работает иногда нет, пришлось тоже самое написать и для img */
+    /* как можно было бы улучшить код, имею виду height может как то подругому можно задать */
+}
+
+.header__logo img {
+    height: 105px;
+}
+
+.address {
+    grid-area: address;
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+}
+
+.address-location {
+    text-decoration: none;
+
+}
+
+/* Cover */
+
+.cover-transparent {
+    background-color: rgb(0 0 0 / .6);
+    /* Не получилось сделать со слоями пытался но не вышло */
+}
+
+.cover {
+    margin-top: 96px;
+    height: 757px;
+    background-image: url(/images/cover.jpg);
+    background-size: cover;
+    padding: 165px 50px 237px 50px;
+}
+
+
+
+.cover__main-text {
+    width: 1000px;
+    height: 355px;
+    color: #FFFFFF;
+    font-family: Raleway;
+    font-weight: 700;
+    font-size: 100px;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+}
+
+.cover__main-text p {
+    width: fit-content;
+}
+
+/* почему здесь не работает .cover__main-text p:last-of-type ??? */
+
+
+.text-letter-space {
+    letter-spacing: .6em;
+}
+
+.main-text-layer2 {
+    position: relative;
+    left: 29%;
+}
+
+.main-text-layer3 {
+    position: relative;
+    left: 59%;
+}
+
+.cover__little-text {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 135px;
+    gap: 78px;
+}
+
+.text-auction {
+    display: flex;
+    justify-content: space-between;
+    width: 637px;
+
+}
+
+.text-auction-p {
+    text-transform: uppercase;
+    color: white;
+}
+
+.button-auction {
+    height: 51px;
+    padding: 0 32px 0 31px;
+    background-color: transparent;
+    border: 1px white solid;
+    color: white;
+    text-transform: uppercase;
+    font-family: Raleway;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+/* Lots */
+
+.lots {
+    margin-top: 179px;
+    height: 692px;
+}
+
+.lots__main-text {
+    margin-left: 63px;
+    font-weight: 700;
+    font-family: Raleway;
+    font-size: 40px;
+}
+
+.lots__card-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 27px 24px 30px 24px;
+}
+
+
+.lots__card-list-item-1,
+.lots__card-list-item-2,
+.lots__card-list-item-3 {
+    width: 334px;
+    height: 563px;
+    list-style: none;
+    background-size: cover;
+    background-position: center;
+}
+
+.lots__card-list-item-1 {
+    background-image: url(/images/card-lot-01.jpg);
+}
+
+.lots__card-list-item-2 {
+    background-image: url(/images/card-lot-02.jpg);
+}
+
+.lots__card-list-item-3 {
+    background-image: url(/images/card-lot-03.jpg);
+}
+
+.card {
+    width: 254px;
+    height: 463px;
+    margin: 51px 40px 48px 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    color: white;
+}
+
+.card-link {
+    text-decoration: none;
+    display: block;
+}
+
+.card__title {
+    text-decoration: underline;
+    font-family: Raleway;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.card__text {
+    font-size: 20px;
+    font-family: Raleway;
+    font-weight: 400;
+    /* по дизаину 2текста вместе и я сделал дисплей флекс спэйс битвин и думал что из за недостака места он прижмет оба текста но так не вышло и я указал размер 463px*/
+}
+
+.lots__link-more {
+    margin-left: 64px;
+}
+
+
+/* about */
+.about {
+    margin-top: 146px;
+    height: 595px;
+    padding: 0 24px;
+}
+
+.about__column {
+    display: grid;
+    column-gap: 25px;
+    padding-top: 35px;
+    grid-template-columns: 334px 1fr;
+    grid-template-rows: 240px 1fr;
+    grid-template-areas:
+        "about__logo about__text-title"
+        ". about__text-description";
+    ;
+    align-items: center;
+    justify-content: center;
+}
+
+.about__logo {
+    display: grid;
+    grid-area: about__logo;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background-color: black;
+    justify-self: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.about__logo-img {
+    width: 148px;
+    height: 114px;
+}
+
+.about__text-title {
+    grid-area: about__text-title;
+    font-size: 40px;
+    font-family: Raleway;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.about__text-description {
+    grid-area: about__text-description;
+    font-size: 20px;
+    font-family: Raleway;
+    font-weight: 400;
+}
+.about__text-description p:first-of-type {
+    margin-bottom: 24px;
+}
+
+/* Footer */
+
+.footer {
+    margin: 180px 50px 0 50px;
+    height: 98px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer__social-list {
+    display: flex;
+    justify-content: space-between;
+    width: 240px;
+}
+.social-list-item {
+    width: 48px;
+    height: 48px;
+}
